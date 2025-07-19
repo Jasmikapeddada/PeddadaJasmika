@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Jasmika Peddada - Portfolio</title>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #374151;
+            background: linear-gradient(135deg, #f8fafc 0%, #dbeafe 100%);
+            min-height: 100vh;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation */
+        nav {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid #e5e7eb;
+            position: sticky;
+            top: 0;
+            z-index: 50;
+        }
+
+        .nav-content {
+            display: flex;
+            align-items: center;
+            padding: 16px 0;
+        }
+
+        .back-link {
+            display: flex;
+            align-items: center;
+            color: #2563eb;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: #1d4ed8;
+        }
+
+        .back-link i {
+            margin-right: 8px;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        .avatar {
+            width: 128px;
+            height: 128px;
+            margin: 0 auto 24px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+            padding: 4px;
+        }
+
+        .avatar-inner {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: #e5e7eb;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: bold;
+            color: #6b7280;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 24px;
+            background: linear-gradient(to right, #2563eb, #8b5cf6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: #6b7280;
+            margin-bottom: 32px;
+            line-height: 1.6;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Card Styles */
+        .card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-content {
+            padding: 32px;
+        }
+
+        .section {
+            padding: 64px 20px;
+        }
+
+        .section.white {
+            background: white;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 48px;
+            background: linear-gradient(to right, #2563eb, #8b5cf6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Journey Timeline */
+        .journey-step {
+            display: flex;
+            gap: 24px;
+            align-items: flex-start;
+            margin-bottom: 32px;
+        }
+
+        .journey-icon {
+            font-size: 2.5rem;
+            flex-shrink: 0;
+        }
+
+        .journey-content {
+            flex: 1;
+        }
+
+        .journey-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 12px;
+            flex-wrap: wrap;
+        }
+
+        .journey-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #1f2937;
+        }
+
+        .badge {
+            background: white;
+            border: 1px solid #d1d5db;
+            color: #374151;
+            padding: 4px 12px;
+            border-radius: 6px;
+            font-size: 0.875rem;
+            margin-top: 8px;
+        }
+
+        .journey-description {
+            color: #6b7280;
+            line-height: 1.6;
+        }
+
+        /* Values Grid */
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+        }
+
+        .value-item {
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+        }
+
+        .value-icon {
+            font-size: 2rem;
+            flex-shrink: 0;
+        }
+
+        .value-title {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: #1f2937;
+            margin-bottom: 8px;
+        }
+
+        .value-description {
+            color: #6b7280;
+        }
+
+        /* Interests Grid */
+        .interests-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 24px;
+        }
+
+        .interest-item {
+            text-align: center;
+            padding: 24px;
+        }
+
+        .interest-icon {
+            font-size: 2.5rem;
+            margin-bottom: 12px;
+        }
+
+        .interest-name {
+            font-weight: 500;
+            color: #1f2937;
+        }
+
+        /* Stats Grid */
+        .stats-card {
+            background: linear-gradient(135deg, #dbeafe 0%, #e7d3ff 100%);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 24px;
+            text-align: center;
+        }
+
+        .stat-item {
+            background: white;
+            padding: 24px;
+            border-radius: 12px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .stat-icon {
+            margin: 0 auto 8px;
+            color: #2563eb;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #2563eb;
+        }
+
+        .stat-label {
+            font-size: 0.875rem;
+            color: #6b7280;
+        }
+
+        /* Call to Action */
+        .cta {
+            background: linear-gradient(135deg, #2563eb 0%, #8b5cf6 100%);
+            color: white;
+            text-align: center;
+            padding: 64px 20px;
+        }
+
+        .cta h2 {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 24px;
+        }
+
+        .cta p {
+            font-size: 1.25rem;
+            margin-bottom: 32px;
+            opacity: 0.9;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-primary {
+            background: white;
+            color: #2563eb;
+        }
+
+        .btn-primary:hover {
+            background: #f3f4f6;
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: white;
+            border: 1px solid white;
+        }
+
+        .btn-outline:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        /* Animations */
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in-section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .avatar {
+    width: 128px;
+    height: 128px;
+    margin: 0 auto 24px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+    overflow: hidden; /* ensures image doesn't overflow */
+}
+
+.avatar img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+}
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .journey-header {
+                flex-direction: column;
+            }
+
+            .badge {
+                margin-top: 8px;
+                align-self: flex-start;
+            }
+
+            .button-group {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="nav-content">
+                <a href="index.html" class="back-link">
+                    <i data-lucide="arrow-left"></i>
+                    Back to Portfolio
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero fade-in-section">
+        <div class="container">
+            <!--<div class="avatar">
+                <div class="avatar-inner">JP</div>
+            </div> -->
+            <div class="avatar">
+                <img src="assets/profile.jpg" alt="Profile" />
+              </div>      
+            <h1>About Jasmika Peddada</h1>
+            <p>A passionate computer science student on a mission to transform data into meaningful insights and contribute to solving real-world challenges through technology.</p>
+        </div>
+    </section>
+
+    <!-- Detailed Story -->
+    <section class="section fade-in-section">
+        <div class="container">
+            <div class="card">
+                <div class="card-content">
+                    <h2 style="font-size: 2rem; font-weight: bold; margin-bottom: 24px; color: #1f2937;">My Story</h2>
+                    <div style="font-size: 1.125rem; color: #374151; line-height: 1.8; space-y: 24px;">
+                        <p style="margin-bottom: 24px;">
+                            My journey into the world of data science and technology began in my second year of B.Tech at JNTU-Gurajada, Vizianagaram.
+                        </p>
+                        <p style="margin-bottom: 24px;">
+                            started small — learning Excel, building dashboards, and drawing insights from simple datasets. From there, I moved on to SQL for data querying, and then to Python, where I explored powerful libraries like NumPy, Pandas, Matplotlib, and Seaborn to handle and visualize data. These early steps not only deepened my curiosity but also built a strong technical foundation.
+                        </p>
+                        <p style="margin-bottom: 24px;">
+                            While exploring learning paths, I stumbled upon a video on YouTube titled “BTech 4 Years Roadmap in Telugu.” That video emphasized how gaining research experience early, especially through internships at premier institutions, could be a game-changer. It sparked a sense of ambition in me — a desire to work on real-world problems and contribute meaningfully to science and technology.
+                        </p>
+                        <p style="margin-bottom: 24px;">
+                            Initially, I aimed to secure an internship at IIT Hyderabad. Unfortunately, I missed the application deadline — a valuable lesson in the importance of preparation and timing. But life had something else in store. Through my uncle, a scientist at NRSC–ISRO, I discovered a new opportunity — one that would shape my entire career direction.
+                        </p>
+                        <p style="margin-bottom: 24px;">
+                            My internship at NRSC–ISRO was nothing short of transformative. I worked on a project titled “Band-to-Band Misregistration Detection in Satellite Images” — a real-world challenge in remote sensing and satellite image processing. I developed a Python-based GUI tool, integrating advanced computer vision techniques like ORB, SIFT, and Phase Correlation. This project exposed me to the fascinating intersection of satellite data, image processing, and data science.
+                        </p>
+                        <p style="margin-bottom: 24px;">
+                            Every day at ISRO was a learning experience. I was surrounded by brilliant minds solving complex challenges that impact how we observe and understand our planet. I learned that tackling real-world problems requires not just coding skills, but also curiosity, patience, and the drive to keep learning.
+                        </p>
+                        <p style="margin-bottom: 24px;">
+                            Today, I continue building on this foundation — working on diverse projects from healthcare analytics to business intelligence. My ultimate goal is to become a data scientist who can bridge the gap between complex data and actionable, impactful insights that help society in meaningful ways.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Journey Timeline -->
+    <section class="section white fade-in-section">
+        <div class="container">
+            <h2 class="section-title">My Journey</h2>
+            <div style="max-width: 1000px; margin: 0 auto;">
+                <div class="card" style="margin-bottom: 32px;">
+                    <div class="card-content">
+                        <div class="journey-step">
+                            <div class="journey-icon">🌱</div>
+                            <div class="journey-content">
+                                <div class="journey-header">
+                                    <h3 class="journey-title">The Beginning</h3>
+                                    <span class="badge">2023 - Early College Days</span>
+                                </div>
+                                <p class="journey-description">Started my B.Tech journey at JNTU Gurajada Vizianagaram with curiosity about technology and data. Discovered my passion for solving real-world problems through programming.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" style="margin-bottom: 32px;">
+                    <div class="card-content">
+                        <div class="journey-step">
+                            <div class="journey-icon">🔍</div>
+                            <div class="journey-content">
+                                <div class="journey-header">
+                                    <h3 class="journey-title">Discovery Phase</h3>
+                                    <span class="badge">2024 - Learning & Growing</span>
+                                </div>
+                                <p class="journey-description">Dived deep into Python, SQL, and data analysis. Started working on projects like calculators and games to strengthen my programming fundamentals.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" style="margin-bottom: 32px;">
+                    <div class="card-content">
+                        <div class="journey-step">
+                            <div class="journey-icon">🎯</div>
+                            <div class="journey-content">
+                                <div class="journey-header">
+                                    <h3 class="journey-title">The ISRO Dream</h3>
+                                    <span class="badge">2025 - Goal Setting</span>
+                                </div>
+                                <p class="journey-description">Watched a YouTube video about BTech roadmaps and set my goal to get a research internship. Initially aimed for IIT-H but discovered ISRO-NRSC opportunity through family connections.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" style="margin-bottom: 32px;">
+                    <div class="card-content">
+                        <div class="journey-step">
+                            <div class="journey-icon">🚀</div>
+                            <div class="journey-content">
+                                <div class="journey-header">
+                                    <h3 class="journey-title">Research Breakthrough</h3>
+                                    <span class="badge">May-June 2025 - ISRO Internship</span>
+                                </div>
+                                <p class="journey-description">Completed a 45-day research internship at NRSC–ISRO, working on the “Band-to-Band Misregistration Detection in Satellite Images” project.
+                                </p>
+                                <p class="journey-description">
+                                    ✅ Built a complete Python GUI tool using ORB, SIFT, and Phase Correlation methods.
+                                </p>
+                                <p class="journey-description">
+                                    ✅ Worked with ResourceSat-2 and 2A satellite imagery.
+                                </p>
+                                <p class="journey-description">
+                                    ✅ Gained hands-on experience in remote sensing, image processing, and research-based development.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-content">
+                        <div class="journey-step">
+                            <div class="journey-icon">⭐</div>
+                            <div class="journey-content">
+                                <div class="journey-header">
+                                    <h3 class="journey-title">Current Focus</h3>
+                                    <span class="badge">2025 - Present</span>
+                                </div>
+                                <p class="journey-description">I’m actively building projects in healthcare analytics and business intelligence while deepening my skills in data science and machine learning. I'm also exploring AI to prepare for advanced roles and research opportunities.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Personal Values -->
+    <section class="section fade-in-section">
+        <div class="container">
+            <h2 class="section-title">My Values & Approach</h2>
+            <div class="values-grid">
+                <div class="card">
+                    <div class="card-content">
+                        <div class="value-item">
+                            <div class="value-icon">🧠</div>
+                            <div>
+                                <h3 class="value-title">Curiosity-Driven Learning</h3>
+                                <p class="value-description">I believe in learning through exploration and asking the right questions. Every project starts with genuine curiosity.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-content">
+                        <div class="value-item">
+                            <div class="value-icon">🔧</div>
+                            <div>
+                                <h3 class="value-title">Problem-Solving Mindset</h3>
+                                <p class="value-description">I approach challenges systematically, breaking down complex problems into manageable components.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-content">
+                        <div class="value-item">
+                            <div class="value-icon">🤝</div>
+                            <div>
+                                <h3 class="value-title">Collaborative Spirit</h3>
+                                <p class="value-description">I value teamwork and believe that the best solutions come from diverse perspectives working together.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-content">
+                        <div class="value-item">
+                            <div class="value-icon">📈</div>
+                            <div>
+                                <h3 class="value-title">Continuous Growth</h3>
+                                <p class="value-description">I'm committed to lifelong learning and staying updated with the latest technologies and methodologies.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interests & Passions -->
+    <section class="section white fade-in-section">
+        <div class="container">
+            <h2 class="section-title">Interests & Passions</h2>
+            <div class="interests-grid" style="max-width: 800px; margin: 0 auto;">
+                <div class="card">
+                    <div class="card-content interest-item">
+                        <div class="interest-icon">🤖</div>
+                        <h3 class="interest-name">Machine Learning</h3>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-content interest-item">
+                        <div class="interest-icon">🧠</div>
+                        <h3 class="interest-name">Artificial Intelligence</h3>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-content interest-item">
+                        <div class="interest-icon">🛰️</div>
+                        <h3 class="interest-name">Space Technology</h3>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-content interest-item">
+                        <div class="interest-icon">📊</div>
+                        <h3 class="interest-name">Data Visualization</h3>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-content interest-item">
+                        <div class="interest-icon">🏥</div>
+                        <h3 class="interest-name">Healthcare Analytics</h3>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-content interest-item">
+                        <div class="interest-icon">💼</div>
+                        <h3 class="interest-name">Business Intelligence</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Personal Stats -->
+    <section class="section fade-in-section">
+        <div class="container">
+            <div class="card stats-card">
+                <div class="card-content">
+                    <h2 style="font-size: 1.5rem; font-weight: bold; text-align: center; margin-bottom: 32px; color: #1f2937;">Quick Facts About Me</h2>
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <i data-lucide="graduation-cap" class="stat-icon" style="width: 32px; height: 32px;"></i>
+                            <div class="stat-number">2027</div>
+                            <div class="stat-label">Expected Graduation</div>
+                        </div>
+                        <div class="stat-item">
+                            <i data-lucide="code" class="stat-icon" style="width: 32px; height: 32px; color: #8b5cf6;"></i>
+                            <div class="stat-number" style="color: #8b5cf6;">4+</div>
+                            <div class="stat-label">Programming Languages</div>
+                        </div>
+                        <div class="stat-item">
+                            <i data-lucide="award" class="stat-icon" style="width: 32px; height: 32px;"></i>
+                            <div class="stat-number">2</div>
+                            <div class="stat-label">Certifications</div>
+                        </div>
+                        <div class="stat-item">
+                            <i data-lucide="users" class="stat-icon" style="width: 32px; height: 32px; color: #8b5cf6;"></i>
+                            <div class="stat-number" style="color: #8b5cf6;">500+</div>
+                            <div class="stat-label">LinkedIn Network</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta">
+        <div class="container">
+            <h2>Let's Connect and Collaborate</h2>
+            <p>I'm always excited to discuss new opportunities, share ideas, or collaborate on interesting projects. Let's build something amazing together!</p>
+            <div class="button-group">
+                <a href="index.html#contact" class="btn btn-primary">Get In Touch</a>
+                <a href="index.html#projects" class="btn btn-outline">View My Projects</a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all fade-in sections
+        const fadeInSections = document.querySelectorAll('.fade-in-section');
+        fadeInSections.forEach((section) => observer.observe(section));
+    </script>
+</body>
+</html>

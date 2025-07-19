@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Details - Portfolio</title>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #374151;
+            background: linear-gradient(135deg, #f8fafc 0%, #dbeafe 100%);
+            min-height: 100vh;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation */
+        nav {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid #e5e7eb;
+            position: sticky;
+            top: 0;
+            z-index: 50;
+        }
+
+        .nav-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 16px 0;
+        }
+
+        .back-link {
+            display: flex;
+            align-items: center;
+            color: #2563eb;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: #1d4ed8;
+        }
+
+        .back-link i {
+            margin-right: 8px;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 12px;
+        }
+
+        .btn {
+            padding: 8px 16px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: #2563eb;
+            border: 1px solid #2563eb;
+        }
+
+        .btn-outline:hover {
+            background: #dbeafe;
+        }
+
+        .btn-primary {
+            background: linear-gradient(to right, #2563eb, #8b5cf6);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: linear-gradient(to right, #1d4ed8, #7c3aed);
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 64px 20px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 16px;
+            background: linear-gradient(to right, #2563eb, #8b5cf6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: #2563eb;
+            font-weight: 500;
+            margin-bottom: 24px;
+        }
+
+        .hero-description {
+            font-size: 1.125rem;
+            color: #6b7280;
+            margin-bottom: 32px;
+            line-height: 1.6;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .tech-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: center;
+            margin-bottom: 32px;
+        }
+
+        .tech-badge {
+            background: linear-gradient(to right, #dbeafe, #e7d3ff);
+            color: #1d4ed8;
+            border: 1px solid #bfdbfe;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        /* Card Styles */
+        .card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-content {
+            padding: 24px;
+        }
+
+        .section {
+            padding: 48px 20px;
+        }
+
+        .section.white {
+            background: white;
+        }
+
+        /* Project Images */
+        .images-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+  justify-content: center;
+  align-items: start;
+}
+
+
+        .image-placeholder {
+            height: 192px;
+            background: linear-gradient(135deg, #dbeafe 0%, #e7d3ff 100%);
+            border-radius: 12px 12px 0 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: #6b7280;
+        }
+
+        .image-placeholder .icon {
+            font-size: 2.5rem;
+            margin-bottom: 8px;
+        }
+
+        .image-caption {
+            font-size: 0.875rem;
+            padding: 16px;
+            text-align: center;
+            color: #6b7280;
+        }
+
+        /* Project Overview */
+        .overview-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 32px;
+            margin-bottom: 48px;
+        }
+
+        .overview-card {
+            text-align: center;
+        }
+
+        .overview-icon {
+            margin: 0 auto 12px;
+        }
+
+        .overview-title {
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #1f2937;
+        }
+
+        .overview-text {
+            color: #6b7280;
+            font-size: 0.875rem;
+        }
+
+        /* Content Sections */
+        .prose {
+            font-size: 1.125rem;
+            color: #374151;
+            line-height: 1.8;
+        }
+
+        .prose p {
+            margin-bottom: 16px;
+        }
+
+        /* Lists */
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 32px;
+        }
+
+        .list-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+
+        .list-item .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            margin-top: 8px;
+            flex-shrink: 0;
+        }
+
+        .list-item .dot.red {
+            background: #ef4444;
+        }
+
+        .list-item .icon {
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .list-item .icon.green {
+            color: #10b981;
+        }
+
+        .list-item-text {
+            color: #374151;
+        }
+
+        /* Learnings */
+        .learnings-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 16px;
+        }
+
+        .learning-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 16px;
+            background: linear-gradient(to right, #dbeafe, #e7d3ff);
+            border-radius: 8px;
+        }
+
+        .learning-item .dot {
+            width: 8px;
+            height: 8px;
+            background: #3b82f6;
+            border-radius: 50%;
+            margin-top: 8px;
+            flex-shrink: 0;
+        }
+
+        /* Call to Action */
+        .cta {
+            background: linear-gradient(135deg, #2563eb 0%, #8b5cf6 100%);
+            color: white;
+            text-align: center;
+            padding: 64px 20px;
+        }
+
+        .cta h2 {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 24px;
+        }
+
+        .cta p {
+            font-size: 1.25rem;
+            margin-bottom: 32px;
+            opacity: 0.9;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-white {
+            background: white;
+            color: #2563eb;
+        }
+
+        .btn-white:hover {
+            background: #f3f4f6;
+        }
+
+        .btn-outline-white {
+            background: transparent;
+            color: white;
+            border: 1px solid white;
+        }
+
+        .btn-outline-white:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        /* Animations */
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in-section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Project Selector */
+        .project-selector {
+            margin-bottom: 32px;
+            text-align: center;
+        }
+
+        .project-selector label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #1f2937;
+        }
+
+        .project-selector select {
+            padding: 8px 16px;
+            border: 1px solid #d1d5db;
+            border-radius: 8px;
+            background: white;
+            color: #374151;
+            font-size: 1rem;
+        }
+
+        .lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.lightbox img {
+  max-width: 70vw;
+  max-height: 70vh;
+  border-radius: 8px;
+  object-fit: contain;
+  box-shadow: 0 0 30px rgba(0,0,0,0.4);
+}
+
+.lightbox .close-btn {
+  position: absolute;
+  top: 24px;
+  right: 32px;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.hidden {
+  display: none;
+}
+
+
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .learnings-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-content {
+                flex-direction: column;
+                gap: 16px;
+                align-items: flex-start;
+            }
+
+            .nav-buttons {
+                width: 100%;
+            }
+
+            .button-group {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="nav-content">
+                <a href="index.html" class="back-link">
+                    <i data-lucide="arrow-left"></i>
+                    Back to Portfolio
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Project Selector -->
+    <section class="section" style="padding: 24px 20px;">
+        <div class="container">
+            <div class="project-selector">
+                <label for="projectSelect">Select Project:</label>
+                <select id="projectSelect" onchange="redirectToSelectedProject()">
+                    <option value="1">Satellite Misregistration Detector</option>
+                    <option value="2">Vrinda Store Dashboard</option>
+                    <option value="3">Women's Diabetes Analysis</option>
+                    <option value="4">Interactive Games Collection</option>
+                </select>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dynamic Content Container -->
+    <div id="projectContent">
+        <!-- Content will be loaded here dynamically -->
+    </div>
+
+    <div id="lightbox" class="lightbox hidden" onclick="closeLightbox()">
+        <span class="close-btn">&times;</span>
+        <img id="lightbox-img" src="" alt="Expanded view">
+      </div>              
+
+    <script>
+        // Project data
+        const projects = {
+            "1": {
+                title: "Satellite Misregistration Detector",
+                subtitle: "Python-Based Computer Vision Tool Developed During ISRO–NRSC Internship",
+                description: "A comprehensive Python-based GUI application designed to detect band-to-band misregistration in satellite images using state-of-the-art computer vision techniques.",
+                longDescription: "As part of my internship at NRSC–ISRO, I built a specialized tool to detect band-to-band misregistration — a common spatial misalignment between spectral bands in satellite images that can compromise analysis accuracy.\n\nThis project combined in-depth research, implementation of advanced image processing algorithms (ORB, SIFT, Phase Correlation), and the development of a user-friendly GUI. The tool is now used by ISRO researchers to enhance the precision and reliability of data from ResourceSat-2 and ResourceSat-2A for remote sensing applications.",
+                duration: "6 weeks (May-June 2025)",
+                team: "Individual project under ISRO guidance",
+                objective: "Develop an accurate and efficient tool for detecting spatial misalignments between spectral bands in satellite imagery",
+                technologies: ["Python", "OpenCV", "NumPy", "Matplotlib", "Tkinter", "SIFT", "ORB", "Phase Correlation"],
+                challenges: [
+                    "Interpreting complex satellite imagery formats and multi-band structures",
+                    "Implementing and comparing multiple computer vision algorithms for precision",
+                    "Optimizing performance to handle large geospatial image datasets",
+                    "Designing an intuitive, user-friendly GUI for domain experts with minimal coding background",
+                    "Validating the tool’s accuracy against registered and misregistered satellite datasets"
+                ],
+                achievements: [
+                    "Successfully implemented 3 misregistration detection techniques: ORB, SIFT, and Phase Correlation",
+                    "Developed a complete desktop GUI application using Python (Tkinter)",
+                    "Processed and evaluated over 50+ band pairs from ResourceSat-2/2A imagery",
+                    "Achieved statistically validated accuracy in distinguishing misregistered from registered bands",
+                    "Delivered a robust, production-ready tool now supporting ISRO researchers in operational workflows"
+                ],
+                learnings: [
+                    "Gained advanced knowledge in computer vision and image registration techniques",
+                    "Acquired hands-on experience working with real-world satellite imagery and remote sensing data",
+                    "Built practical skills in GUI development using Python’s Tkinter library",
+                    "Applied statistical methods for result validation and threshold setting",
+                    "Followed professional software development workflows and best practices in a research setting"
+                ],
+                images: [
+                    { caption: "Main GUI Interface", src: "assets/gui.jpg"},
+                    { caption: "Detection Results Visualization" , src: "assets/detectionResults.jpg"}
+                ]
+            },
+            "2": {
+                title: "Vrinda Store Dashboard",
+                subtitle: "Comprehensive Sales Analytics Solution",
+                description: "An interactive Excel dashboard providing comprehensive sales analysis and business insights for strategic decision-making.",
+                longDescription: "This project involved creating a comprehensive sales analysis dashboard for Vrinda Store using Microsoft Excel. The dashboard serves as a powerful business intelligence tool that transforms raw sales data into actionable insights, helping the business make data-driven decisions for 2023.\n\nThe project encompassed the entire data analysis pipeline from data collection and cleaning to advanced visualization and strategic recommendations. The interactive dashboard enables stakeholders to explore sales trends, customer behavior, and market performance through dynamic charts, pivot tables, and interactive filters.",
+                duration: "3 weeks (December 2024)",
+                team: "Individual project",
+                objective: "Analyze Vrinda Store's 2022 sales performance and provide actionable recommendations for 2023 growth",
+                technologies: ["Microsoft Excel", "Pivot Tables", "Power Query", "Advanced Charts", "Data Validation", "Conditional Formatting"],
+                challenges: [
+                    "Cleaning and preprocessing large datasets with missing values",
+                    "Creating meaningful visualizations from complex sales data",
+                    "Designing interactive elements for dynamic data exploration",
+                    "Identifying key performance indicators and business metrics",
+                    "Translating data insights into actionable business recommendations"
+                ],
+                achievements: [
+                    "Processed and analyzed 31,047 sales records for comprehensive insights",
+                    "Identified that women customers account for 65% of total purchases",
+                    "Discovered top 3 performing states contributing 35% of total sales",
+                    "Found that adult age group (30-49 years) represents 50% of customer base",
+                    "Revealed that Amazon, Flipkart, and Myntra channels drive 80% of sales"
+                ],
+                learnings: [
+                    "Advanced Excel techniques including pivot tables and advanced formulas",
+                    "Data cleaning and preprocessing methodologies",
+                    "Business intelligence and dashboard design principles",
+                    "Customer segmentation and market analysis",
+                    "Strategic business recommendation development"
+                ],
+                images: [
+                    { caption: "Main Dashboard Overview" , src: "assets/vrindaSales.jpg"}
+                ]
+            },
+            "3": {
+                title: "Women's Diabetes Analysis",
+                subtitle: "Healthcare Data Analytics for Prevention",
+                description: "A data-driven approach to understanding and reducing women's diabetes rates through comprehensive analysis and visualization.",
+                longDescription: "This healthcare analytics project focuses on understanding the key factors contributing to diabetes in women and developing data-driven recommendations for prevention. Using a comprehensive dataset from Kaggle, I performed extensive exploratory data analysis to uncover critical health trends and patterns.\n\nThe project involved analyzing various health indicators including BMI, glucose levels, blood pressure, and age demographics to identify high-risk groups and contributing factors. The resulting interactive Excel dashboard serves as a valuable tool for healthcare professionals and policymakers to understand diabetes trends and implement targeted prevention strategies.",
+                duration: "4 weeks (November 2024)",
+                team: "Individual project",
+                objective: "Identify key factors contributing to diabetes in women and provide evidence-based prevention recommendations",
+                technologies: ["Microsoft Excel", "Statistical Analysis", "Data Visualization", "Healthcare Analytics", "Exploratory Data Analysis"],
+                challenges: [
+                    "Working with sensitive healthcare data requiring careful analysis",
+                    "Identifying meaningful correlations in complex health metrics",
+                    "Creating visualizations that effectively communicate health insights",
+                    "Developing actionable recommendations based on data findings",
+                    "Ensuring statistical validity of health-related conclusions"
+                ],
+                achievements: [
+                    "Discovered that 40% of women in the dataset have diabetes, with 35% being prediabetic",
+                    "Identified that young adults (131 cases) now have higher diabetes rates than middle-aged women",
+                    "Found strong correlation between BMI and glucose levels, confirming obesity as a major risk factor",
+                    "Revealed that 64% of women are overweight or obese, significantly increasing diabetes risk",
+                    "Developed targeted recommendations for different age groups and risk categories"
+                ],
+                learnings: [
+                    "Healthcare data analysis and interpretation",
+                    "Statistical correlation analysis and significance testing",
+                    "Public health trend analysis and visualization",
+                    "Evidence-based recommendation development",
+                    "Healthcare dashboard design and presentation"
+                ],
+                images: [
+                    { caption: "Main Health Analytics Dashboard", src: "assets/healthAnalytics.jpg"}
+                ]
+            },
+            "4": {
+                title: "Interactive Games Collection",
+                subtitle: "Python GUI Development Showcase",
+                description: "A collection of interactive applications including Calculator and Tic Tac Toe games built with Python's Tkinter library.",
+                longDescription: "This project represents my foundation-building phase in Python GUI development. I created two interactive applications - a fully functional calculator and a classic Tic Tac Toe game - using Python's Tkinter library. These projects were instrumental in developing my understanding of GUI programming, event handling, and user interface design.\n\nWhile seemingly simple, these applications incorporate essential programming concepts including object-oriented programming, error handling, game logic implementation, and user experience design. They served as stepping stones to more complex projects and helped me build confidence in creating user-facing applications.",
+                duration: "2 weeks (December 2024)",
+                team: "Individual learning project",
+                objective: "Master Python GUI development fundamentals and create polished user-friendly applications",
+                technologies: ["Python", "Tkinter", "Object-Oriented Programming", "Event Handling", "GUI Design"],
+                challenges: [
+                    "Learning Tkinter library and GUI programming concepts",
+                    "Implementing clean and intuitive user interfaces",
+                    "Handling various edge cases and error conditions",
+                    "Creating responsive and visually appealing layouts",
+                    "Implementing game logic for Tic Tac Toe with win detection"
+                ],
+                achievements: [
+                    "Built a fully functional calculator with all basic arithmetic operations",
+                    "Implemented complete Tic Tac Toe game with win/draw detection",
+                    "Created clean, user-friendly interfaces for both applications",
+                    "Implemented proper error handling and input validation",
+                    "Gained solid foundation in Python GUI development"
+                ],
+                learnings: [
+                    "Python Tkinter library and GUI programming fundamentals",
+                    "Event-driven programming and user interaction handling",
+                    "Layout management and interface design principles",
+                    "Game logic implementation and state management",
+                    "Code organization and modular programming practices"
+                ],
+                images: [
+                    { caption: "Calculator Application Interface", src: "assets/calculator.jpg"},
+                    { caption: "Tic Tac Toe Game Interface", src: "assets/TicTacToe.jpg"}
+                ]
+            }
+        };
+        
+        function redirectToSelectedProject() {
+    const selectedId = document.getElementById('projectSelect').value;
+    window.location.href = `ProjectDetails.html?project=${selectedId}`;
+}
+
+    function loadProject(projectId) {
+    const project = projects[projectId];
+    if (!project) return;
+    document.getElementById('projectSelect').value = projectId;
+
+    const contentHtml = `
+        <!-- Hero Section -->
+        <section class="hero fade-in-section">
+            <div class="container">
+                <h1>${project.title}</h1>
+                <p class="hero-subtitle">${project.subtitle}</p>
+                <p class="hero-description">${project.description}</p>
+                <div class="tech-badges">
+                    ${project.technologies.map(tech => `<span class="tech-badge">${tech}</span>`).join('')}
+                </div>
+            </div>
+        </section>
+
+        <!-- Project Images -->
+        <section class="section fade-in-section">
+  <div class="container">
+    <div class="images-grid">
+      ${project.images.map(image => `
+        <div class="card">
+          <img src="${image.src}" 
+               alt="${image.caption}" 
+               style="width:100%; height:200px; object-fit:cover; border-radius: 12px 12px 0 0; cursor: pointer;" 
+               onclick="openLightbox('${image.src}')">
+          <div class="card-content">
+            <p class="image-caption">${image.caption}</p>
+          </div>
+        </div>
+      `).join('')}
+    </div>
+  </div>
+</section>
+
+
+        <!-- Project Overview -->
+        <section class="section white fade-in-section">
+            <div class="container">
+                <div class="overview-grid">
+                    <div class="card overview-card">
+                        <div class="card-content">
+                            <i data-lucide="calendar" class="overview-icon" style="width: 32px; height: 32px; color: #2563eb;"></i>
+                            <h3 class="overview-title">Duration</h3>
+                            <p class="overview-text">${project.duration}</p>
+                        </div>
+                    </div>
+                    <div class="card overview-card">
+                        <div class="card-content">
+                            <i data-lucide="users" class="overview-icon" style="width: 32px; height: 32px; color: #8b5cf6;"></i>
+                            <h3 class="overview-title">Team</h3>
+                            <p class="overview-text">${project.team}</p>
+                        </div>
+                    </div>
+                    <div class="card overview-card">
+                        <div class="card-content">
+                            <i data-lucide="target" class="overview-icon" style="width: 32px; height: 32px; color: #2563eb;"></i>
+                            <h3 class="overview-title">Objective</h3>
+                            <p class="overview-text">${project.objective}</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-content">
+                        <h2 style="font-size: 1.5rem; font-weight: bold; margin-bottom: 24px; color: #1f2937;">Project Overview</h2>
+                        <div class="prose">
+                            ${project.longDescription.split('\n\n').map(paragraph => `<p>${paragraph.trim()}</p>`).join('')}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Challenges & Solutions -->
+        <section class="section fade-in-section">
+            <div class="container">
+                <div class="content-grid">
+                    <div class="card">
+                        <div class="card-content">
+                            <h3 style="font-size: 1.25rem; font-weight: bold; margin-bottom: 16px; color: #1f2937;">Challenges Faced</h3>
+                            ${project.challenges.map(challenge => `
+                                <div class="list-item">
+                                    <div class="dot red"></div>
+                                    <span class="list-item-text">${challenge}</span>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-content">
+                            <h3 style="font-size: 1.25rem; font-weight: bold; margin-bottom: 16px; color: #1f2937;">Key Achievements</h3>
+                            ${project.achievements.map(achievement => `
+                                <div class="list-item">
+                                    <i data-lucide="check-circle" class="icon green" style="width: 20px; height: 20px;"></i>
+                                    <span class="list-item-text">${achievement}</span>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Learnings -->
+        <section class="section white fade-in-section">
+            <div class="container">
+                <div class="card">
+                    <div class="card-content">
+                        <h2 style="font-size: 1.5rem; font-weight: bold; margin-bottom: 24px; color: #1f2937;">Key Learnings</h2>
+                        <div class="learnings-grid">
+                            ${project.learnings.map(learning => `
+                                <div class="learning-item">
+                                    <div class="dot"></div>
+                                    <span class="list-item-text">${learning}</span>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="cta">
+            <div class="container">
+                <h2>Interested in This Project?</h2>
+                <p>I'd love to discuss the technical details, share insights, or collaborate on similar projects.</p>
+                <div class="button-group">
+                    <a href="index.html#contact" class="btn btn-white">
+                        Get In Touch
+                    </a>
+                </div>
+            </div>
+        </section>
+    `;
+
+    document.getElementById('projectContent').innerHTML = contentHtml;
+
+    // Re-initialize icons and animations
+    lucide.createIcons();
+    initializeAnimations();
+}
+
+function openLightbox(src) {
+  document.getElementById("lightbox-img").src = src;
+  document.getElementById("lightbox").classList.remove("hidden");
+}
+
+function closeLightbox() {
+  document.getElementById("lightbox").classList.add("hidden");
+}
+
+
+        function initializeAnimations() {
+            // Intersection Observer for fade-in animations
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, observerOptions);
+
+            // Observe all fade-in sections
+            const fadeInSections = document.querySelectorAll('.fade-in-section');
+            fadeInSections.forEach((section) => observer.observe(section));
+        }
+
+        function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+        const projectId = getQueryParam('project') || '1';
+        lucide.createIcons();
+        loadProject(projectId);
+        });
+
+        function getQueryParam(param) {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(param);
+  }
+    </script>
+</body>
+</html>

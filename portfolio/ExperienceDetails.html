@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research Intern at ISRO - Experience Details</title>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #374151;
+            background: linear-gradient(135deg, #f8fafc 0%, #dbeafe 100%);
+            min-height: 100vh;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation */
+        nav {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid #e5e7eb;
+            position: sticky;
+            top: 0;
+            z-index: 50;
+        }
+
+        .nav-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 16px 0;
+        }
+
+        .back-link {
+            display: flex;
+            align-items: center;
+            color: #2563eb;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: #1d4ed8;
+        }
+
+        .back-link i {
+            margin-right: 8px;
+        }
+
+        .btn {
+            padding: 8px 16px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: linear-gradient(to right, #2563eb, #8b5cf6);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: linear-gradient(to right, #1d4ed8, #7c3aed);
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 64px 20px;
+        }
+
+        .hero-icon {
+            margin: 0 auto 24px;
+            color: #2563eb;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 16px;
+            background: linear-gradient(to right, #2563eb, #8b5cf6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            color: #2563eb;
+            font-weight: 500;
+            margin-bottom: 24px;
+        }
+
+        .hero-details {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            flex-wrap: wrap;
+            color: #6b7280;
+            margin-bottom: 32px;
+        }
+
+        .hero-detail {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Card Styles */
+        .card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-content {
+            padding: 24px;
+        }
+
+        .section {
+            padding: 48px 20px;
+        }
+
+        .section.white {
+            background: white;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 32px;
+            color: #1f2937;
+        }
+
+        /* Key Details Grid */
+        .details-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 24px;
+            margin-bottom: 32px;
+        }
+
+        .detail-card {
+            text-align: center;
+        }
+
+        .detail-icon {
+            margin: 0 auto 12px;
+        }
+
+        .detail-title {
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #1f2937;
+        }
+
+        .detail-text {
+            color: #6b7280;
+            font-size: 0.875rem;
+        }
+
+        /* Images Grid */
+        .images-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+        }
+
+        .image-placeholder {
+            height: 192px;
+            background: linear-gradient(135deg, #dbeafe 0%, #e7d3ff 100%);
+            border-radius: 12px 12px 0 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: #6b7280;
+        }
+
+        .image-placeholder .icon {
+            font-size: 2.5rem;
+            margin-bottom: 8px;
+        }
+
+        .image-caption {
+            font-size: 0.875rem;
+            padding: 0 16px;
+            text-align: center;
+        }
+
+        /* Content Sections */
+        .prose {
+            font-size: 1.125rem;
+            color: #374151;
+            line-height: 1.8;
+        }
+
+        .prose p {
+            margin-bottom: 16px;
+        }
+
+        /* Technologies */
+        .tech-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .tech-badge {
+            background: linear-gradient(to right, #dbeafe, #e7d3ff);
+            color: #1d4ed8;
+            border: 1px solid #bfdbfe;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        /* Lists */
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 32px;
+        }
+
+        .list-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+
+        .list-item .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            margin-top: 8px;
+            flex-shrink: 0;
+        }
+
+        .list-item .dot.blue {
+            background: #3b82f6;
+        }
+
+        .list-item .dot.red {
+            background: #ef4444;
+        }
+
+        .list-item .dot.purple {
+            background: #8b5cf6;
+        }
+
+        .list-item .icon {
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .list-item .icon.green {
+            color: #10b981;
+        }
+
+        .list-item .icon.yellow {
+            color: #f59e0b;
+        }
+
+        .list-item-text {
+            color: #374151;
+            font-size: 0.875rem;
+        }
+
+        /* Call to Action */
+        .cta {
+            background: linear-gradient(135deg, #2563eb 0%, #8b5cf6 100%);
+            color: white;
+            text-align: center;
+            padding: 64px 20px;
+        }
+
+        .cta h2 {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 24px;
+        }
+
+        .cta p {
+            font-size: 1.25rem;
+            margin-bottom: 32px;
+            opacity: 0.9;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-white {
+            background: white;
+            color: #2563eb;
+        }
+
+        .btn-white:hover {
+            background: #f3f4f6;
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: white;
+            border: 1px solid white;
+        }
+
+        .btn-outline:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        /* Animations */
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in-section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero-details {
+                flex-direction: column;
+                gap: 16px;
+            }
+
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-content {
+                flex-direction: column;
+                gap: 16px;
+                align-items: flex-start;
+            }
+
+            .button-group {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="nav-content">
+                <a href="index.html" class="back-link">
+                    <i data-lucide="arrow-left"></i>
+                    Back to Portfolio
+                </a>
+                <!-- <a href="#" class="btn btn-primary">
+                    <i data-lucide="external-link"></i>
+                    ISRO Website
+                </a> -->
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero fade-in-section">
+        <div class="container">
+            <i data-lucide="building" class="hero-icon" style="width: 64px; height: 64px;"></i>
+            <h1>Research Intern</h1>
+            <p class="hero-subtitle">National Remote Sensing Centre (NRSC) - ISRO</p>
+            <div class="hero-details">
+                <div class="hero-detail">
+                    <i data-lucide="calendar"></i>
+                    May 2025 - June 2025 (2 months)
+                </div>
+                <div class="hero-detail">
+                    <i data-lucide="map-pin"></i>
+                    Hyderabad, Telangana, India
+                </div>
+                <div class="hero-detail">
+                    <i data-lucide="building"></i>
+                    On-site Research Internship
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Details -->
+    <section class="section fade-in-section">
+        <div class="container">
+            <div class="details-grid">
+                <div class="card detail-card">
+                    <div class="card-content">
+                        <i data-lucide="target" class="detail-icon" style="width: 32px; height: 32px; color: #2563eb;"></i>
+                        <h3 class="detail-title">Project Focus</h3>
+                        <p class="detail-text">Band-to-Band Misregistration Detection in Satellite Images</p>
+                    </div>
+                </div>
+                <div class="card detail-card">
+                    <div class="card-content">
+                        <i data-lucide="building" class="detail-icon" style="width: 32px; height: 32px; color: #8b5cf6;"></i>
+                        <h3 class="detail-title">Department</h3>
+                        <p class="detail-text">Satellite Image Analysis Division</p>
+                    </div>
+                </div>
+                <div class="card detail-card">
+                    <div class="card-content">
+                        <i data-lucide="award" class="detail-icon" style="width: 32px; height: 32px; color: #2563eb;"></i>
+                        <h3 class="detail-title">Guidance</h3>
+                        <p class="detail-text">Mr. K. V. Sudhakar</p>
+                    </div>
+                </div>
+                <div class="card detail-card">
+                    <div class="card-content">
+                        <i data-lucide="check-circle" class="detail-icon" style="width: 32px; height: 32px; color: #10b981;"></i>
+                        <h3 class="detail-title">Status</h3>
+                        <p class="detail-text">Successfully Completed</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+  <!-- Experience Images 
+<section class="section white fade-in-section" style="min-height: 60vh; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+    <h2 class="section-title" style="margin-bottom: 32px;">Experience Gallery</h2>
+    
+    <div class="card" style="width: 300px; height: 300px;">
+      <div class="w-full h-full bg-white rounded-lg overflow-hidden flex items-center justify-center">
+        <img src="assets/nrsc-campus.jpg"
+             alt="NRSC Campus in Hyderabad"
+             class="w-full h-full object-cover" />
+      </div>
+      <div class="card-content">
+        <p class="detail-text text-center">NRSC Campus in Hyderabad</p>
+      </div>
+    </div>
+  </section> -->
+  
+  
+
+    <!-- Overview -->
+    <section class="section fade-in-section">
+        <div class="container">
+            <div class="card">
+                <div class="card-content">
+                    <h2 style="font-size: 1.5rem; font-weight: bold; margin-bottom: 24px; color: #1f2937;">Experience Overview</h2>
+                    <div class="prose">
+                        <p>
+                            My research internship at NRSC–ISRO was a truly transformative chapter in my journey. It introduced me to the dynamic world of satellite image analysis and remote sensing, where I worked on real-world problems that contribute to national Earth observation missions.
+                        </p>
+                        <p>
+                            the guidance of expert scientists, I developed a hands-on understanding of advanced image processing techniques, learned how research is conducted in a professional environment, and worked directly with actual ISRO satellite data. This experience not only deepened my technical skills but also reshaped how I view technology’s role in solving complex scientific challenges.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technologies -->
+    <section class="section white fade-in-section">
+        <div class="container">
+            <div class="card">
+                <div class="card-content">
+                    <h2 style="font-size: 1.5rem; font-weight: bold; margin-bottom: 24px; color: #1f2937;">Technologies & Tools Used</h2>
+                    <div class="tech-badges">
+                        <span class="tech-badge">Python</span>
+                        <span class="tech-badge">OpenCV</span>
+                        <span class="tech-badge">Tkinter</span>
+                        <span class="tech-badge">SIFT</span>
+                        <span class="tech-badge">ORB</span>
+                        <span class="tech-badge">Phase Correlation</span>
+                        <span class="tech-badge">Statistical Analysis</span>
+                        <span class="tech-badge">Satellite Imagery</span>
+                        <span class="tech-badge">Remote Sensing Tools</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Responsibilities & Achievements -->
+    <section class="section fade-in-section">
+        <div class="container">
+            <div class="content-grid">
+                <div class="card">
+                    <div class="card-content">
+                        <h3 style="font-size: 1.25rem; font-weight: bold; margin-bottom: 16px; color: #1f2937;">Key Responsibilities</h3>
+                        <div class="list-item">
+                            <div class="dot blue"></div>
+                            <span class="list-item-text">Conducted comprehensive literature review on band-to-band misregistration in satellite imagery</span>
+                        </div>
+                        <div class="list-item">
+                            <div class="dot blue"></div>
+                            <span class="list-item-text">Implemented and compared multiple computer vision algorithms (ORB, SIFT, Phase Correlation)</span>
+                        </div>
+                        <div class="list-item">
+                            <div class="dot blue"></div>
+                            <span class="list-item-text">Developed a Python-based GUI application for misregistration detection</span>
+                        </div>
+                        <div class="list-item">
+                            <div class="dot blue"></div>
+                            <span class="list-item-text">Processed and analyzed over 50 satellite image band pairs for validation</span>
+                        </div>
+                        <div class="list-item">
+                            <div class="dot blue"></div>
+                            <span class="list-item-text">Created detailed documentation and reports on findings and methodologies</span>
+                        </div>
+                        <div class="list-item">
+                            <div class="dot blue"></div>
+                            <span class="list-item-text">Presented progress updates to senior scientists and research team</span>
+                        </div>
+                        <div class="list-item">
+                            <div class="dot blue"></div>
+                            <span class="list-item-text">Collaborated with team members on algorithm optimization and testing</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-content">
+                        <h3 style="font-size: 1.25rem; font-weight: bold; margin-bottom: 16px; color: #1f2937;">Major Achievements</h3>
+                        <div class="list-item">
+                            <i data-lucide="check-circle" class="icon green" style="width: 20px; height: 20px;"></i>
+                            <span class="list-item-text">Successfully developed a fully functional BBMR detection tool</span>
+                        </div>
+                        <div class="list-item">
+                            <i data-lucide="check-circle" class="icon green" style="width: 20px; height: 20px;"></i>
+                            <span class="list-item-text">Achieved accurate detection rates with statistical validation</span>
+                        </div>
+                        <div class="list-item">
+                            <i data-lucide="check-circle" class="icon green" style="width: 20px; height: 20px;"></i>
+                            <span class="list-item-text">Implemented three different detection algorithms for comprehensive comparison</span>
+                        </div>
+                        <div class="list-item">
+                            <i data-lucide="check-circle" class="icon green" style="width: 20px; height: 20px;"></i>
+                            <span class="list-item-text">Created user-friendly GUI interface for non-technical users</span>
+                        </div>
+                        <div class="list-item">
+                            <i data-lucide="check-circle" class="icon green" style="width: 20px; height: 20px;"></i>
+                            <span class="list-item-text">Delivered production-ready tool for ongoing research use</span>
+                        </div>
+                        <div class="list-item">
+                            <i data-lucide="check-circle" class="icon green" style="width: 20px; height: 20px;"></i>
+                            <span class="list-item-text">Received positive feedback from supervisors and research team</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Challenges & Learnings -->
+    <section class="section white fade-in-section">
+        <div class="container">
+            <div class="content-grid">
+                <div class="card">
+                    <div class="card-content">
+                        <h3 style="font-size: 1.25rem; font-weight: bold; margin-bottom: 16px; color: #1f2937;">Challenges Overcome</h3>
+                        <div class="list-item">
+                            <div class="dot red"></div>
+                            <span class="list-item-text">Understanding complex satellite imagery formats and spectral band characteristics</span>
+                        </div>
+                        <div class="list-item">
+                            <div class="dot red"></div>
+                            <span class="list-item-text">Learning advanced image processing concepts within tight timeline</span>
+                        </div>
+                        <div class="list-item">
+                            <div class="dot red"></div>
+                            <span class="list-item-text">Optimizing algorithms for processing large satellite image files</span>
+                        </div>
+                        <div class="list-item">
+                            <div class="dot red"></div>
+                            <span class="list-item-text">Balancing accuracy with computational efficiency</span>
+                        </div>
+                        <div class="list-item">
+                            <div class="dot red"></div>
+                            <span class="list-item-text">Creating intuitive interfaces for complex technical functionality</span>
+                        </div>
+                        <div class="list-item">
+                            <div class="dot red"></div>
+                            <span class="list-item-text">Validating results against established benchmarks and standards</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-content">
+                        <h3 style="font-size: 1.25rem; font-weight: bold; margin-bottom: 16px; color: #1f2937;">Key Learnings</h3>
+                        <div class="list-item">
+                            <i data-lucide="lightbulb" class="icon yellow" style="width: 20px; height: 20px;"></i>
+                            <span class="list-item-text">Advanced computer vision and image processing techniques</span>
+                        </div>
+                        <div class="list-item">
+                            <i data-lucide="lightbulb" class="icon yellow" style="width: 20px; height: 20px;"></i>
+                            <span class="list-item-text">Satellite imagery analysis and remote sensing principles</span>
+                        </div>
+                        <div class="list-item">
+                            <i data-lucide="lightbulb" class="icon yellow" style="width: 20px; height: 20px;"></i>
+                            <span class="list-item-text">Research methodology and scientific documentation</span>
+                        </div>
+                        <div class="list-item">
+                            <i data-lucide="lightbulb" class="icon yellow" style="width: 20px; height: 20px;"></i>
+                            <span class="list-item-text">Professional software development practices</span>
+                        </div>
+                        <div class="list-item">
+                            <i data-lucide="lightbulb" class="icon yellow" style="width: 20px; height: 20px;"></i>
+                            <span class="list-item-text">Collaboration in a high-tech research environment</span>
+                        </div>
+                        <div class="list-item">
+                            <i data-lucide="lightbulb" class="icon yellow" style="width: 20px; height: 20px;"></i>
+                            <span class="list-item-text">Understanding of space technology and Earth observation applications</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Daily Activities & Impact -->
+    <section class="section fade-in-section">
+        <div class="container">
+            <div class="content-grid">
+                <div class="card">
+                    <div class="card-content">
+                        <h3 style="font-size: 1.25rem; font-weight: bold; margin-bottom: 16px; color: #1f2937;">Daily Activities</h3>
+                        <div class="list-item">
+                            <div class="dot purple"></div>
+                            <span class="list-item-text">Literature review and research paper analysis</span>
+                        </div>
+                        <div class="list-item">
+                            <div class="dot purple"></div>
+                            <span class="list-item-text">Algorithm implementation and testing sessions</span>
+                        </div>
+                        <div class="list-item">
+                            <div class="dot purple"></div>
+                            <span class="list-item-text">Data processing and validation work</span>
+                        </div>
+                        <div class="list-item">
+                            <div class="dot purple"></div>
+                            <span class="list-item-text">Documentation and report writing</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-content">
+                        <h3 style="font-size: 1.25rem; font-weight: bold; margin-bottom: 16px; color: #1f2937;">Project Impact</h3>
+                        <p class="list-item-text" style="margin-bottom: 16px; line-height: 1.6;">The tool developed during this internship contributes to improving the accuracy and reliability of satellite imagery used for various Earth observation applications, including climate monitoring, agricultural assessment, and disaster management.</p>
+                        <h4 style="font-weight: 600; margin-bottom: 8px; color: #1f2937;">Mentorship Experience</h4>
+                        <p class="list-item-text" style="line-height: 1.6;">Working under Mr. K. V. Sudhakar provided invaluable guidance in both technical aspects and professional development. The mentorship extended beyond the project scope to career advice and research best practices.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta">
+        <div class="container">
+            <h2>Want to Know More?</h2>
+            <p>I'd be happy to share more details about my ISRO experience and discuss how it shaped my career path.</p>
+            <div class="button-group">
+                <a href="index.html#contact" class="btn btn-white">Get In Touch</a>
+                <a href="index.html#projects" class="btn btn-outline">View Related Projects</a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all fade-in sections
+        const fadeInSections = document.querySelectorAll('.fade-in-section');
+        fadeInSections.forEach((section) => observer.observe(section));
+    </script>
+</body>
+</html>

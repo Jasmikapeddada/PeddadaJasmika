@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jasmika Peddada - Data Scientist & ISRO Research Intern</title>
+    <meta name="description" content="Portfolio of Jasmika Peddada - Aspiring Data Scientist, AI & Machine Learning Enthusiast, and Research Intern at NRSC-ISRO. Specializing in satellite image analysis, data analytics, and Python development." />
+    <meta name="author" content="Jasmika Peddada" />
+    <meta name="keywords" content="Data Science, Machine Learning, ISRO, Satellite Image Analysis, Python, Research Intern, Computer Vision, Remote Sensing" />
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Jasmika Peddada - Data Scientist & ISRO Research Intern" />
+    <meta property="og:description" content="Portfolio showcasing data science projects, ISRO internship experience, and expertise in AI & Machine Learning" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://your-portfolio-url.com" />
+
+    <!-- Favicon -->
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
+        <!-- Navigation -->
+        <nav class="fixed top-0 w-full bg-white/80 backdrop-blur-md z-50 border-b border-gray-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between items-center py-4">
+                    <h1 class="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                        Jasmika Peddada
+                    </h1>
+                    <div class="hidden md:flex space-x-8">
+                        <button onclick="scrollToSection('home')" class="nav-link">Home</button>
+                        <button onclick="scrollToSection('about')" class="nav-link">About</button>
+                        <button onclick="scrollToSection('projects')" class="nav-link">Projects</button>
+                        <button onclick="scrollToSection('experience')" class="nav-link">Experience</button>
+                        <button onclick="scrollToSection('skills')" class="nav-link">Skills</button>
+                        <button onclick="scrollToSection('contact')" class="nav-link">Contact</button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <section id="home" class="pt-20 pb-16 px-4">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center py-20 animate-fade-in">
+                    <div class="mb-8">
+                        <div class="w-48 h-48 mx-auto rounded-full bg-gradient-to-br from-blue-500 to-purple-600 p-1 mb-8">
+                            <!-- <div class="w-full h-full rounded-full bg-gray-200 flex items-center justify-center text-6xl font-bold text-gray-600">
+                                JP
+                            </div> -->
+                            <div class="avatar">
+                                <img src="assets/profile.jpg" alt="Profile" />
+                              </div>                              
+                        </div>
+                    </div>
+                    <h1 class="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-blue-600 via-purple-600 to-blue-800 bg-clip-text text-transparent">
+                        Peddada Jasmika Satya Sri
+                    </h1>
+                    <p class="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto">
+                        Research Intern at NRSC-ISRO | Aspiring Data Scientist | AI & Machine Learning Enthusiast
+                    </p>
+                    <p class="text-lg text-gray-500 mb-12 max-w-2xl mx-auto">
+                        Passionate about data-driven solutions, satellite image analysis, and building innovative tools that make a difference
+                    </p>
+                    <div class="flex flex-wrap justify-center gap-4">
+                        <button onclick="scrollToSection('about')" class="btn btn-primary">
+                            Learn About Me
+                        </button>
+                        <button onclick="scrollToSection('projects')" class="btn btn-outline">
+                            View My Work
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-20 px-4 fade-in-section opacity-0">
+            <div class="max-w-7xl mx-auto">
+                <h2 class="text-4xl font-bold text-center mb-16 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                    About Me
+                </h2>
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div class="space-y-6">
+                        <p class="text-lg text-gray-700 leading-relaxed">
+                            I'm a passionate Computer Science student at JNTU Gurajada Vizianagaram, currently pursuing my B.Tech with a focus on Data Science and Artificial Intelligence. My journey began with curiosity about how data can solve real-world problems.
+                        </p>
+                        <p class="text-lg text-gray-700 leading-relaxed">
+                            Recently completed a research internship at NRSC-ISRO where I worked on satellite image analysis, developing Python-based tools for detecting band-to-band misregistration. This experience opened my eyes to the fascinating world of remote sensing and geospatial analysis.
+                        </p>
+                        <p class="text-lg text-gray-700 leading-relaxed">
+                            I'm skilled in Python, SQL, and Excel, with hands-on experience in data analysis, visualization, and machine learning. My goal is to become a data scientist who can bridge the gap between complex data and actionable insights.
+                        </p>
+                        <a href="AboutDetails.html">
+                            <button class="btn btn-primary">
+                                Know More About Me
+                            </button>
+                        </a>
+                    </div>
+                    <div class="relative">
+                        <div class="bg-gradient-to-br from-blue-100 to-purple-100 rounded-2xl p-8 transform hover:scale-105 transition-transform duration-300">
+                            <div class="grid grid-cols-2 gap-6 text-center">
+                                <div class="bg-white rounded-xl p-4 shadow-sm">
+                                    <div class="text-2xl font-bold text-blue-600">45</div>
+                                    <div class="text-sm text-gray-600">Days at ISRO</div>
+                                </div>
+                                <div class="bg-white rounded-xl p-4 shadow-sm">
+                                    <div class="text-2xl font-bold text-purple-600">4</div>
+                                    <div class="text-sm text-gray-600">Projects</div>
+                                </div>
+                                <div class="bg-white rounded-xl p-4 shadow-sm">
+                                    <div class="text-2xl font-bold text-blue-600">2</div>
+                                    <div class="text-sm text-gray-600">Certifications</div>
+                                </div>
+                                <div class="bg-white rounded-xl p-4 shadow-sm">
+                                    <div class="text-2xl font-bold text-purple-600">500+</div>
+                                    <div class="text-sm text-gray-600">LinkedIn Connections</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="py-20 px-4 bg-white fade-in-section opacity-0">
+            <div class="max-w-7xl mx-auto">
+                <h2 class="text-4xl font-bold text-center mb-16 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                    My Projects
+                </h2>
+                <div class="relative">
+                    <div id="projects-container" class="flex gap-6 overflow-x-hidden scroll-smooth">
+                        <!-- Project 1 -->
+                        <div class="card min-w-[400px] group hover:scale-105 transition-all duration-300 hover:shadow-xl">
+                            <div class="relative overflow-hidden rounded-t-lg">
+                                <div class="h-48 bg-white flex items-center justify-center">
+                                    <img src="assets/bbmr.jpg" alt="Satellite Misregistration Detector Preview" class="h-full object-cover">
+                                </div>                                
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-semibold mb-3 text-gray-800">Satellite Misregistration Detector</h3>
+                                <p class="text-gray-600 mb-4 line-clamp-3">Built a Python-based GUI tool for detecting band-to-band misregistration in satellite images using ORB, SIFT, and Phase Correlation methods during my ISRO internship.</p>
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <span class="badge">Python</span>
+                                    <span class="badge">OpenCV</span>
+                                    <span class="badge">Tkinter</span>
+                                    <span class="badge">NumPy</span>
+                                    <span class="badge">Matplotlib</span>
+                                </div>
+                                <div class="flex gap-3">
+                                    <a href="ProjectDetails.html?project=1">
+                                        <button class="btn btn-primary">
+                                            Read More
+                                        </button>
+                                    </a>
+                                    <a href="https://github.com/Jasmikapeddada/BBMR-detection-tool">
+                                        <button class="btn btn-sm btn-outline">
+                                            <i data-lucide="github" class="w-4 h-4 mr-2"></i>
+                                            View Project
+                                        </button>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Project 2 -->
+                        <div class="card min-w-[400px] group hover:scale-105 transition-all duration-300 hover:shadow-xl">
+                            <div class="relative overflow-hidden rounded-t-lg">
+                                <div class="relative overflow-hidden rounded-t-lg">
+                                    <div class="h-48 bg-white flex items-center justify-center">
+                                        <img src="assets/sales.jpg" alt="Satellite Misregistration Detector Preview" class="h-full object-cover">
+                                    </div>                                
+                                    <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                                </div>
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-semibold mb-3 text-gray-800">Vrinda Store Dashboard</h3>
+                                <p class="text-gray-600 mb-4 line-clamp-3">Comprehensive sales analysis dashboard using Excel with pivot tables, charts, and slicers. Identified key business insights and provided actionable recommendations.</p>
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <span class="badge">Excel</span>
+                                    <span class="badge">Pivot Tables</span>
+                                    <span class="badge">Data Analysis</span>
+                                    <span class="badge">Visualization</span>
+                                </div>
+                                <div class="flex gap-3">
+                                    <a href="ProjectDetails.html?project=2">
+                                        <button class="btn btn-primary">
+                                            Read More
+                                        </button>
+                                    </a>
+                                    <a href="https://github.com/Jasmikapeddada/Vrinda-Store-Data-Analysis-Dashboard">
+                                        <button class="btn btn-sm btn-outline">
+                                            <i data-lucide="github" class="w-4 h-4 mr-2"></i>
+                                            View Project
+                                        </button>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Project 3 -->
+                        <div class="card min-w-[400px] group hover:scale-105 transition-all duration-300 hover:shadow-xl">
+                            <div class="relative overflow-hidden rounded-t-lg">
+                                <div class="relative overflow-hidden rounded-t-lg">
+                                    <div class="h-48 bg-white flex items-center justify-center">
+                                        <img src="assets/health.jpg" alt="Satellite Misregistration Detector Preview" class="h-full object-cover">
+                                    </div>                                
+                                    <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                                </div>
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-semibold mb-3 text-gray-800">Women's Diabetes Analysis</h3>
+                                <p class="text-gray-600 mb-4 line-clamp-3">Data-driven approach to reducing women's diabetes rates using Excel. Performed EDA and created interactive dashboard highlighting critical health trends.</p>
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <span class="badge">Excel</span>
+                                    <span class="badge">Data Analysis</span>
+                                    <span class="badge">EDA</span>
+                                    <span class="badge">Healthcare Analytics</span>
+                                </div>
+                                <div class="flex gap-3">
+                                    <a href="ProjectDetails.html?project=3">
+                                        <button class="btn btn-primary">
+                                            Read More
+                                        </button>
+                                    </a>
+                                    <a href="https://github.com/Jasmikapeddada/Women-Diabetes-Dashboard">
+                                        <button class="btn btn-sm btn-outline">
+                                            <i data-lucide="github" class="w-4 h-4 mr-2"></i>
+                                            View Project
+                                        </button>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Project 4 -->
+                        <div class="card min-w-[400px] group hover:scale-105 transition-all duration-300 hover:shadow-xl">
+                            <div class="relative overflow-hidden rounded-t-lg">
+                                <div class="relative overflow-hidden rounded-t-lg">
+                                    <div class="h-48 bg-white flex items-center justify-center">
+                                        <img src="assets/games.jpg" alt="Satellite Misregistration Detector Preview" class="h-full object-cover">
+                                    </div>                                
+                                    <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                                </div>
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-semibold mb-3 text-gray-800">Interactive Games Collection</h3>
+                                <p class="text-gray-600 mb-4 line-clamp-3">Developed Calculator and Tic Tac Toe applications using Python's Tkinter library with intuitive GUI and game logic implementation.</p>
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <span class="badge">Python</span>
+                                    <span class="badge">Tkinter</span>
+                                    <span class="badge">GUI Development</span>
+                                </div>
+                                <div class="flex gap-3">
+                                    <a href="ProjectDetails.html?project=4">
+                                        <button class="btn btn-primary">
+                                            Read More
+                                        </button>
+                                    </a>
+                                    <a href="https://github.com/Jasmikapeddada/Python-Projects/tree/main/python%20projects">
+                                        <button class="btn btn-sm btn-outline">
+                                            <i data-lucide="github" class="w-4 h-4 mr-2"></i>
+                                            View Project
+                                        </button>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Navigation Arrows -->
+                    <button onclick="scrollProjects('left')" class="absolute left-0 top-1/2 -translate-y-1/2 bg-white shadow-lg rounded-full p-3 hover:bg-gray-50 transition-colors z-10">
+                        <i data-lucide="chevron-left" class="w-6 h-6 text-gray-600"></i>
+                    </button>
+                    <button onclick="scrollProjects('right')" class="absolute right-0 top-1/2 -translate-y-1/2 bg-white shadow-lg rounded-full p-3 hover:bg-gray-50 transition-colors z-10">
+                        <i data-lucide="chevron-right" class="w-6 h-6 text-gray-600"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="py-20 px-4 fade-in-section opacity-0">
+            <div class="max-w-7xl mx-auto">
+                <h2 class="text-4xl font-bold text-center mb-16 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                    Experience
+                </h2>
+                <div class="space-y-8">
+                    <div class="card group hover:scale-102 transition-all duration-300 hover:shadow-xl overflow-hidden">
+                        <div class="p-0">
+                            <div class="md:flex">
+                                <div class="md:w-1/3 h-64 md:h-auto bg-gradient-to-br from-blue-100 to-purple-100 flex items-center justify-center">
+                                    <div class="w-full aspect-[3/1] overflow-hidden">
+                                        <img src="assets/nrsc-isro.jpg" alt="NRSC-ISRO" class="w-full h-full object-cover block">
+                                      </div>                                                                                                           
+                                </div>
+                                <div class="md:w-2/3 p-8">
+                                    <div class="flex items-start justify-between mb-4">
+                                        <div>
+                                            <h3 class="text-2xl font-semibold text-gray-800 mb-2">Research Intern</h3>
+                                            <p class="text-lg text-blue-600 font-medium mb-2">NRSC - ISRO</p>
+                                            <div class="flex items-center gap-4 text-gray-500 text-sm">
+                                                <div class="flex items-center gap-1">
+                                                    <i data-lucide="calendar" class="w-4 h-4"></i>
+                                                    May 2025 - Jun 2025
+                                                </div>
+                                                <div class="flex items-center gap-1">
+                                                    <i data-lucide="map-pin" class="w-4 h-4"></i>
+                                                    Hyderabad, Telangana
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p class="text-gray-700 mb-6 leading-relaxed">Completed research internship focusing on satellite image analysis. Built Python-based GUI tool using image processing techniques and gained practical experience in remote sensing.</p>
+                                    <div class="flex gap-3">
+                                        <a href="ExperienceDetails.html">
+                                            <button class="btn btn-primary">
+                                                Read More
+                                            </button>
+                                        </a>
+                                        <a href="https://www.linkedin.com/pulse/my-first-internship-journey-lessons-mistakes-wins-jasmika-satya-sri-7mnfc/?trackingId=ZCia0P7kSFGHCfbzPXiK0A%3D%3D">
+                                            <button class="btn btn-outline">
+                                                <i data-lucide="external-link" class="w-4 h-4 mr-2"></i>
+                                                View Details
+                                            </button>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="py-20 px-4 bg-white fade-in-section opacity-0">
+            <div class="max-w-7xl mx-auto">
+                <h2 class="text-4xl font-bold text-center mb-16 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                    Skills & Expertise
+                </h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Programming -->
+                    <div class="card group hover:scale-105 transition-all duration-300 hover:shadow-xl">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-4 text-gray-800 text-center">Programming</h3>
+                            <div class="flex flex-wrap gap-2 justify-center">
+                                <span class="badge-skill">Python</span>
+                                <span class="badge-skill">SQL</span>
+                                <span class="badge-skill">Excel</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Data Science -->
+                    <div class="card group hover:scale-105 transition-all duration-300 hover:shadow-xl">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-4 text-gray-800 text-center">Data Science</h3>
+                            <div class="flex flex-wrap gap-2 justify-center">
+                                <span class="badge-skill">Data Analysis</span>
+                                <span class="badge-skill">EDA</span>
+                                <span class="badge-skill">Data Cleaning</span>
+                                <span class="badge-skill">Dashboard Creation</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- AI/ML -->
+                    <div class="card group hover:scale-105 transition-all duration-300 hover:shadow-xl">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-4 text-gray-800 text-center">AI/ML</h3>
+                            <div class="flex flex-wrap gap-2 justify-center">
+                                <span class="badge-skill">Machine Learning</span>
+                                <span class="badge-skill">Generative AI</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tools -->
+                    <div class="card group hover:scale-105 transition-all duration-300 hover:shadow-xl">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-4 text-gray-800 text-center">Tools</h3>
+                            <div class="flex flex-wrap gap-2 justify-center">
+                                <span class="badge-skill">OpenCV</span>
+                                <span class="badge-skill">NumPy</span>
+                                <span class="badge-skill">Matplotlib</span>
+                                <span class="badge-skill">Tkinter</span>
+                                <span class="badge-skill">Pandas</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Specialization -->
+                    <div class="card group hover:scale-105 transition-all duration-300 hover:shadow-xl">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-4 text-gray-800 text-center">Specialization</h3>
+                            <div class="flex flex-wrap gap-2 justify-center">
+                                <span class="badge-skill">Remote Sensing</span>
+                                <span class="badge-skill">Satellite Imagery</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certifications Section -->
+        <section class="py-20 px-4 fade-in-section opacity-0">
+            <div class="max-w-7xl mx-auto">
+                <h2 class="text-4xl font-bold text-center mb-16 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                    Certifications
+                </h2>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="card group hover:scale-105 transition-all duration-300 hover:shadow-xl">
+                        <div class="p-6">
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <div class="text-white font-bold text-lg">🏆</div>
+                                </div>
+                                <div class="flex-1">
+                                    <h3 class="text-lg font-semibold text-gray-800 mb-2">Generative AI</h3>
+                                    <p class="text-blue-600 font-medium mb-2">Microsoft & LinkedIn Learning</p>
+                                    <p class="text-gray-500 text-sm mb-3">Oct 2024</p>
+                                    <p class="text-xs text-gray-400 break-all">ID: 0b05a97eb8ac90baa88b54592b487ed9fe17ac44acb48549e085d6d9313769db</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card group hover:scale-105 transition-all duration-300 hover:shadow-xl">
+                        <div class="p-6">
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <div class="text-white font-bold text-lg">🏆</div>
+                                </div>
+                                <div class="flex-1">
+                                    <h3 class="text-lg font-semibold text-gray-800 mb-2">AI/ML for Geodata Analysis</h3>
+                                    <p class="text-blue-600 font-medium mb-2">ISRO - IIRS</p>
+                                    <p class="text-gray-500 text-sm mb-3">Sep 2024</p>
+                                    <p class="text-xs text-gray-400 break-all">ID: hcWFZNloBD</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 px-4 bg-gradient-to-br from-blue-50 to-purple-50 fade-in-section opacity-0">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-4xl font-bold mb-8 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                    Let's Connect
+                </h2>
+                <p class="text-lg text-gray-600 mb-12">
+                    I'm always excited to discuss new opportunities, collaborations, or just have a chat about data science and technology!
+                </p>
+                
+                <div class="grid md:grid-cols-3 gap-8 mb-12">
+                    <div class="card group hover:scale-105 transition-all duration-300 hover:shadow-xl">
+                        <div class="p-6 text-center">
+                            <i data-lucide="mail" class="w-12 h-12 mx-auto mb-4 text-blue-600"></i>
+                            <h3 class="font-semibold mb-2">Email</h3>
+                            <p class="text-gray-600">jasmikapeddada@gmail.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card group hover:scale-105 transition-all duration-300 hover:shadow-xl">
+                        <div class="p-6 text-center">
+                            <i data-lucide="phone" class="w-12 h-12 mx-auto mb-4 text-purple-600"></i>
+                            <h3 class="font-semibold mb-2">LinkedIn</h3>
+                            <p class="text-gray-600">www.linkedin.com/in/peddada-jasmika</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card group hover:scale-105 transition-all duration-300 hover:shadow-xl">
+                        <div class="p-6 text-center">
+                            <i data-lucide="map-pin" class="w-12 h-12 mx-auto mb-4 text-blue-600"></i>
+                            <h3 class="font-semibold mb-2">Location</h3>
+                            <p class="text-gray-600">Vizianagaram, Andhra Pradesh</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flex justify-center gap-4">
+                    <a href="https://github.com/Jasmikapeddada">
+                        <button class="btn btn-lg btn-primary">
+                          <i data-lucide="github" class="w-5 h-5 mr-2"></i>
+                          GitHub Profile
+                        </button>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-gray-900 text-white py-12 px-4">
+            <div class="max-w-7xl mx-auto text-center">
+                <h3 class="text-2xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+                    Jasmika Peddada
+                </h3>
+                <p class="text-gray-400 mb-6">
+                    Aspiring Data Scientist | AI & ML Enthusiast | Research Intern at ISRO-NRSC
+                </p>
+                <p class="text-gray-500 text-sm">
+                    © 2025 Jasmika Peddada. Built with passion and dedication.
+                </p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+    </script>
+</body>
+</html>
